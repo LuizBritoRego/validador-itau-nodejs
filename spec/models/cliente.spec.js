@@ -8,6 +8,11 @@ describe('Clientes', ()=> {
     expect(cliente.cpf).toEqual("2332322332322")
   });
 
+ 
+  it('CPF numeros errados', async () => {
+    let cliente = new Cliente(1, 'Danilo', '111.111.111-11');
+    expect(cliente.validarCPF()).toEqual(false)
+  });
 
   it('CPF válido', async () => {
     let cliente = new Cliente(1, 'Danilo', '709.251.970-50');
